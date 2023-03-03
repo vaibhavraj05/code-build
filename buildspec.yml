@@ -9,4 +9,4 @@ phases:
     commands:
       - npm run build
       # copy the build artifacts to an S3 bucket
-      - aws s3 sync build/* s3://vaibhavraj.sheerhsjain.live
+      - aws s3 sync build/ s3://vaibhavraj.sheerhsjain.live
