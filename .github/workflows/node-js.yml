@@ -22,7 +22,8 @@ jobs:
       run: yarn install
     
     - name: artifact build
-      run: yar build 
+      run: yarn build 
     
-    #- name: pushing to github
+    - name: pushing to github
+      run: ${{ secrets.TESTING_CRED }} aws s3 cp build ${{ secrets.BUK_NAME }}
     
