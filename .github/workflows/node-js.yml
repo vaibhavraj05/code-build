@@ -19,18 +19,18 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: creating the npm
-      run: yarn install
+      run: echo $(node -v)
     
-    - name: artifact build
-      run: yarn build 
+#     - name: artifact build
+#       run: yarn build 
     
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.TESTING_ID }}
-        aws-secret-access-key: ${{ secrets.TESTING_KEY }}
-        aws-region: ap-south-1
+#     - name: Configure AWS Credentials
+#       uses: aws-actions/configure-aws-credentials@v1
+#       with:
+#         aws-access-key-id: ${{ secrets.TESTING_ID }}
+#         aws-secret-access-key: ${{ secrets.TESTING_KEY }}
+#         aws-region: ap-south-1
     
-    - name: pushing to github
-      run: aws s3 cp  --recursive build s3://vaibhavraj.sheerhsjain.live
+#     - name: pushing to github
+#       run: aws s3 cp  --recursive build s3://vaibhavraj.sheerhsjain.live
     
